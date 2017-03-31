@@ -1,19 +1,19 @@
 import React from 'react'
 
-import CommentForm from './CommentForm'
 import CommentList from './CommentList'
+import CommentForm from './CommentForm'
+
 
 export default class CommentBox extends React.Component{
-	constructor(){
-		super{}
-	}
+	constructor() {
+    super()
+  }
 
-	reder() {
+	render() {
 		return(
 			<div class="commentBox">
 				<CommentForm/>
 				<CommentList/>
-				
 			</div>
 			)
 	}

@@ -7,7 +7,7 @@
   ],
   "plugins": [
   	"react-html-attrs",
-  	"transform-class-propertie",
+  	"transform-class-properties",
   	"transform-decorators-legacy"
   ]
 }

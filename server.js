@@ -9,34 +9,40 @@ const open = require('open');
 /** SERVER **/
 
 const express = require('express');
-const http  = require('http');
+const http = require('http');
 const engine = require('socket.io');
 
-const post = 3000;
+const port = 3000;
 const app = express();
 
-let data = {
-  {id: 1, author: "Cosa uno", text: 'Comentario'},
-  {id: 1, author: "Cosa uno", text: 'Comentario'}
-};
+let data = [
+  {id: 1, author: "Cosa Uno", text: "Comentario"},
+  {id: 2, author: "Cosa Dos", text: "Otro Comentario"}
+];
 
 let server = http.createServer(app).listen(port, () => {
-  console.log('El servidor esta escuchando en ${port}');
+  console.log(`El servidor está escuchando en el puerto ${port}`);
 });
-
+  
 const io = engine.listen(server);
 
-io.on('connection', (socket) =>{
-  socket.on('read', () =>{
-    io.emit('data', data);
-  });
-  socket.on('sign', (sign) =>{
-    data.unshift(sign);
-    io.emit('data', data);
-  });
+io.on('connection', (socket) => {
+
+  io.emit('Connection success')
+  
+  socket.on('read', () => {
+    io.emit('data', data)
+  })
+
+  socket.on('sign', (sign) => {
+    data.unshift(sign)
+    console.log(sign, data)
+    io.emit('data', data)
+  })
 
 });
 
+// END SERVER
 
 /**
  * Flag indicating whether webpack compiled for the first time.

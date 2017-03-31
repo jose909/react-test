@@ -1,17 +1,16 @@
 import React from 'react'
 
-import CommentForm from './Comment'
+import Comment from './Comment'
 
 export default class CommentList extends React.Component{
-	constructor(){
-		super{}
-	}
+	constructor() {
+    super()
+  }
 
-	reder() {
+	render() {
 		return(
-			<div class="comment">
-			<h2>Nombre Autor</h2>
-			<p>Comment</p>
+			<div class="CommentList">
+				<Comment/>
 			</div>
 			)
 	}
