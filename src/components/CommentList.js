@@ -7,10 +7,14 @@ export default class CommentList extends React.Component{
     super()
   }
 
-	render() {
+  render(){
+  	let all_comments = this.props.data.map((comment) =>{
+  		return (<Comment key={comment.id} author={comment.author} text={comment.text} />)
+  	})
+
 		return(
 			<div class="CommentList">
-				<Comment/>
+				{all_comments}
 			</div>
 			)
 	}

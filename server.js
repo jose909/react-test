@@ -17,7 +17,9 @@ const app = express();
 
 let data = [
   {id: 1, author: "Cosa Uno", text: "Comentario"},
-  {id: 2, author: "Cosa Dos", text: "Otro Comentario"}
+  {id: 2, author: "Cosa Dos", text: "Otro Comentario"},
+  {id: 3, author: "jose", text: "Comentario"},
+  {id: 4, author: "Mario", text: "Otro Comentario"}
 ];
 
 let server = http.createServer(app).listen(port, () => {

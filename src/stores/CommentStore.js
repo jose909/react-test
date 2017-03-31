@@ -11,8 +11,14 @@ let CommentStore = Reflux.createStore({
       this.trigger(data)
 		})
 	},
-	  fetchComments: function () {
+	
+    fetchComments: function () {
     this.socket.emit('read')
-	}
+	},
+
+  sendSigh: function(comment) {
+    this.socket.emit('sign', comment)
+  }
+
 });
 export default CommentStore

@@ -12,8 +12,8 @@ export default class CommentBox extends React.Component{
 	render() {
 		return(
 			<div class="commentBox">
-				<CommentForm/>
-				<CommentList/>
+				<CommentForm onSubmit={this.props.onSubmit}/>
+				<CommentList data={this.props.data} />
 			</div>
 			)
 	}
